@@ -20,7 +20,7 @@ export default function FooterBanner() {
         <div className="flex flex-wrap items-center justify-center gap-2">
           {/* Download button */}
           <a
-            href="../assets/siaSmart.py"
+            href="../siaSmart.py"
             download
             className="px-3 py-1.5 border border-neutral-400 bg-neutral-100 hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 transition-colors cursor-pointer text-[10px] font-bold"
             title="Descargar código ejecutable .py"
