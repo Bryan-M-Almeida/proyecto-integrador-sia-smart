@@ -519,28 +519,48 @@ export function runFloodLogic(
 
 export function runBillingLogic(name: string, gb: number) {
   const client = name.trim() || "Cliente Vecinal";
+
   let cost = 0;
-  let breakdown = "";
+
+  let breakdown: string[] = [];
 
   if (gb <= 50) {
     cost = 0;
-    breakdown = `Subsidio Social Completo (0-50 GB gratuitos). Consumo de ${gb} GB cubierto íntegramente por el bono de equidad digital.`;
+
+    breakdown = [
+      `Subsidio Social Completo`,
+      `0-50 GB gratuitos`,
+      `Consumo: ${gb} GB`,
+    ];
   } else if (gb <= 100) {
     const surplus = gb - 50;
-    cost = surplus * 1;
-    breakdown = `Subsidio Parcial: Primeros 50 GB gratuitos + ${surplus.toFixed(1)} GB en la banda económica especial facturados a tarifa social de $1 por GB.`;
+
+    cost = surplus;
+
+    breakdown = [
+      `Primeros 50 GB gratuitos`,
+      `${surplus.toFixed(1)} GB facturados a $1`,
+      `Tarifa social aplicada`,
+    ];
   } else {
-    // above 100 GB
-    const baseSurplus = 50; // from 50 to 100
     const highSurplus = gb - 100;
-    cost = baseSurplus * 1 + highSurplus * 2;
-    breakdown = `Cargo de Alto Uso: Primeros 50 GB gratuitos + 50 GB de la banda intermedia ($50) + excesos de ${highSurplus.toFixed(1)} GB facturados a tarifa de amortización de $2 por GB.`;
+
+    cost = 50 + highSurplus * 2;
+
+    breakdown = [
+      `50 GB gratuitos`,
+      `50 GB intermedios ($50)`,
+      `${highSurplus.toFixed(1)} GB extra a $2`,
+    ];
   }
 
   return {
     client,
+
     gbConsumed: gb,
+
     totalBill: cost,
+
     breakdown,
   };
 }

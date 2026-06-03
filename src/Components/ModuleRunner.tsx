@@ -1207,18 +1207,18 @@ export default function ModuleRunner({ moduleId }: ModuleRunnerProps) {
         {moduleId === "maintenance" && maintResult && (
           <div className="space-y-6 flex-1 flex flex-col justify-between font-mono text-xs text-neutral-850 dark:text-neutral-200">
             <div className="space-y-4">
-              <div className="border-b border-neutral-300 dark:border-neutral-800 pb-2 text-[10px] font-bold text-[#5C6B73] dark:text-[#8AA2AD] uppercase tracking-wide">
+              <div className="border-b border-neutral-300 dark:border-neutral-800 pb-2 text-[10px] font-bold text-[#5C6B73] dark:text-white uppercase tracking-wide">
                 [INFORMACIÓN_DE_REGISTRO_SIA_04]
               </div>
 
               <div
                 className={
                   maintResult.isCriticalTrigger
-                    ? "border border-neutral-400 p-3 hover:bg-blue-500 text-neutral-900"
+                    ? "border border-neutral-400 p-3 hover:bg-red-500/80 text-white"
                     : "border border-neutral-300 p-3"
                 }
               >
-                <span className="text-[8px] font-bold block uppercase text-neutral-500 mb-1">
+                <span className="text-[8px] font-bold block uppercase text-gray-200 mb-1">
                   Severidad de Fallos Registrada
                 </span>
                 <span className="text-sm font-extrabold uppercase">
