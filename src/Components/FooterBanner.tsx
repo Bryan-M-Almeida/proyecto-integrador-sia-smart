@@ -2,7 +2,7 @@ import React from "react";
 import { Download, Terminal, Info } from "lucide-react";
 export default function FooterBanner() {
   return (
-    <footer className="bg-[#F2F1EC] dark:bg-[#232324] border-t border-neutral-250 dark:border-neutral-800 px-6 py-4 font-mono text-[10px]">
+    <footer className="fixed bottom-0 z-100 w-full bg-[#F2F1EC] dark:bg-[#232324] border-t border-neutral-250 dark:border-neutral-800 px-6 py-4 font-mono text-[10px]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Left Side: Description and Python notice */}
         <div className="text-center md:text-left space-y-1">

@@ -136,7 +136,7 @@ export default function Sidebar({
           </div>
 
           {/* Utility Selector Pills - Redesigned as clean bordered boxes */}
-          <div className="flex items-center gap-1 overflow-x-auto pb-1 no-scrollbar">
+          <div className="flex items-center gap-1 overflow-x-auto pb-2">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
               return (
@@ -152,7 +152,7 @@ export default function Sidebar({
                     }
                   `}
                 >
-                  {cat === "all" ? "todos" : cat.slice(0, 4)}
+                  {cat === "all" ? "todos" : cat.slice(0, 9)}
                 </button>
               );
             })}

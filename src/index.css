@@ -10,3 +10,36 @@
 body {
   font-family: var(--font-sans);
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: black;
+  transition: .3s;
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: #6b6770;
+
+  border-radius: 999px;
+
+  transition:
+    background .3s,
+    width .3s,
+    box-shadow .3s;
+}
+
+::-webkit-scrollbar:horizontal{
+
+ height:4px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background: #553a94;
+
+  box-shadow:
+    0 0 10px #553a94;
+
+}
